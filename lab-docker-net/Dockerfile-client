@@ -1,0 +1,10 @@
+FROM alpine
+
+RUN apk add --update python3 py-pip
+
+WORKDIR /app
+COPY udp_client.py .
+
+CMD ["python3", "udp_client.py", "172.17.0.3", "1234"]
+
+

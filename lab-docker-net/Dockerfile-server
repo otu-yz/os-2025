@@ -1,0 +1,12 @@
+FROM alpine
+
+RUN apk add --update python3 py-pip
+
+WORKDIR /app
+COPY udp_server.py .
+
+EXPOSE 1234
+
+CMD ["python3", "udp_server.py", "0.0.0.0", "1234"]
+
+
